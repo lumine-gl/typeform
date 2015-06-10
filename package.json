@@ -1,0 +1,33 @@
+{
+  "name": "typeform",
+  "version": "0.0.0",
+  "description": "A toolkit for rendering type to maps for use in WebGL applications.",
+  "main": "lib/index.js",
+  "scripts": {
+    "pretest": "webpack --config ./test/webpack.config.js ./lib/index.js ./test/bin/typeform.js",
+    "test": "echo \"Open test/lib-test.html in a browser\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thure/lumine.git"
+  },
+  "keywords": [
+    "canvas",
+    "layout",
+    "render",
+    "virtual dom"
+  ],
+  "author": "Will Shown <will.shown@microsoft.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thure/lumine/issues"
+  },
+  "homepage": "https://github.com/thure/lumine",
+  "devDependencies": {
+    "chai": "latest",
+    "mocha": "latest",
+    "node-libs-browser": "latest",
+    "webpack": "latest"
+  },
+  "dependencies": {}
+}
