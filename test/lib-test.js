@@ -21,7 +21,7 @@ describe('Typeform', function(){
       tf.render(
 
         '<h1>Test pattern</h1>' +
-        '<p>If this is in Segoe UI, Helvetica Neue, or Helvetica, and it\'s bluish, and "Test pattern" is heavier than this paragraph, then all is good.</p>',
+        '<p>If this is in Segoe UI, Helvetica Neue, or Helvetica, and it\'s bluish, and "Test pattern" is heavier than this paragraph, then all is&nbsp;good.</p>',
 
         {
           width: 240,
