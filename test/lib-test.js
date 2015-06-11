@@ -20,14 +20,34 @@ describe('Typeform', function(){
 
       tf.render(
 
-        // TODO: do we really need to inline all the styles? The SVG might need to be in the document to receive styles…
+        '<h1>Test pattern</h1>' +
+        '<p>If this is in Segoe UI, Helvetica Neue, or Helvetica, and it\'s bluish, and "Test pattern" is heavier than this paragraph, then all is good.</p>',
 
-        '<h1 style="font-size: 20px;">Hello, world.</h1>' +
-        '<p style="font-size: 12px;">Climb leg rub face on everything give attitude nap all day for under the bed. Chase mice attack feet but rub face on everything hopped up on goofballs.</p>',
+        {
+          width: 240,
+          height: 240,
+          density: 2
+        },
 
-        200, 200, 1, function(el){
+        {
+          'h1, p': {
+            'fontFamily': '"Segoe UI", "Helvetica Neue", Helvetica, sans-serif',
+            'color': '#86ABA5'
+          },
+          'p': {
+            'fontSize': '13px',
+            'fontWeight': 200
+          },
+          'h1': {
+            'fontSize': '20px',
+            'fontWeight': 600
+          }
+        },
+
+        function(el){
           document.body.appendChild(el);
         }
+
       );
 
     });
