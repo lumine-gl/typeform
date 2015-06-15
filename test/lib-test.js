@@ -1,3 +1,20 @@
+var CONTENT = '<h1>Test pattern</h1>' +
+      '<p>If this is in Segoe UI, Helvetica Neue, or Helvetica, and it\'s bluish, and "Test pattern" is heavier than this paragraph, then all is&nbsp;good.</p>',
+    STYLE = {
+      'h1, p': {
+        'fontFamily': '"Segoe UI", "Helvetica Neue", Helvetica, sans-serif',
+        'color': '#86ABA5'
+      },
+      'p': {
+        'fontSize': '13px',
+        'fontWeight': 200
+      },
+      'h1': {
+        'fontSize': '20px',
+        'fontWeight': 600
+      }
+    };
+
 describe('Typeform', function(){
 
   var tf;
@@ -22,12 +39,11 @@ describe('Typeform', function(){
 
   describe('render', function(){
 
-    it('should look right', function(){
+    it('should look right', function(done){
 
       tf.render(
 
-        '<h1>Test pattern</h1>' +
-        '<p>If this is in Segoe UI, Helvetica Neue, or Helvetica, and it\'s bluish, and "Test pattern" is heavier than this paragraph, then all is&nbsp;good.</p>',
+        CONTENT,
 
         {
           width: 240,
@@ -35,23 +51,41 @@ describe('Typeform', function(){
           density: 2
         },
 
-        {
-          'h1, p': {
-            'fontFamily': '"Segoe UI", "Helvetica Neue", Helvetica, sans-serif',
-            'color': '#86ABA5'
-          },
-          'p': {
-            'fontSize': '13px',
-            'fontWeight': 200
-          },
-          'h1': {
-            'fontSize': '20px',
-            'fontWeight': 600
-          }
-        },
+        STYLE,
 
         function(el){
           document.body.appendChild(el);
+          done();
+        }
+
+      );
+
+    });
+
+  });
+
+  describe('renderBoxes', function(){
+
+    it('should look right', function(done){
+
+      tf.renderBoxes(
+        [
+          {
+            x: 20, y: 20, w: 200, h: 200,
+            content: CONTENT
+          },
+          {
+            x: 240, y: 20, w: 200, h: 200,
+            content: CONTENT
+          }
+        ],
+
+        2,
+
+        STYLE,
+
+        function(el){
+          done();
         }
 
       );
