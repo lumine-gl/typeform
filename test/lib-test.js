@@ -1,6 +1,12 @@
 describe('Typeform', function(){
 
-  var tf = new Typeform({
+  var tf;
+
+  before( function(done){
+
+    tf = new Typeform({}, function(){
+      return done();
+    });
 
   });
 
