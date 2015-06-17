@@ -21,17 +21,16 @@ describe('Typeform', function(){
 
   before( function(done){
 
-    tf = new Typeform({}, function(){
-      return done();
-    });
+    tf = new Typeform({ resources: 4, log: true });
+    tf.start(done);
 
   });
 
   describe('constructor', function(){
 
-    it('should have a 2d context to work with', function(){
+    it('should have pools to work with', function(){
 
-      return tf._ctx.constructor.name.should.equal('CanvasRenderingContext2D');
+      return tf.should.have.property('_pools');
 
     });
 
@@ -53,8 +52,10 @@ describe('Typeform', function(){
 
         STYLE,
 
-        function(el){
-          document.body.appendChild(el);
+        function(err, canvas, release){
+          if(err) throw err;
+          document.body.appendChild(canvas);
+          release();
           done();
         }
 
@@ -84,7 +85,10 @@ describe('Typeform', function(){
 
         STYLE,
 
-        function(el){
+        function(err, canvas, release){
+          if(err) throw err;
+          document.body.appendChild(canvas);
+          release();
           done();
         }
 

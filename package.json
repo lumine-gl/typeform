@@ -29,5 +29,8 @@
     "node-libs-browser": "latest",
     "webpack": "latest"
   },
-  "dependencies": {}
+  "dependencies": {
+    "async": "latest",
+    "generic-pool": "latest"
+  }
 }
