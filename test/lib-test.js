@@ -52,9 +52,9 @@ describe('Typeform', function(){
 
         STYLE,
 
-        function(err, canvas, release, ow, oh){
+        function(err, canvas, release, u, v){
           if(err) throw err;
-          console.log('ow:', ow, ' oh:', oh);
+          console.log('u:', u, ' v:', v);
           document.body.appendChild(canvas);
           release();
           done();
@@ -86,9 +86,9 @@ describe('Typeform', function(){
 
         STYLE,
 
-        function(err, canvas, release, ow, oh){
+        function(err, canvas, release, u, v){
           if(err) throw err;
-          console.log('ow:', ow, ' oh:', oh);
+          console.log('u:', u, ' v:', v);
           document.body.appendChild(canvas);
           release();
           done();
