@@ -28,9 +28,9 @@ describe('Typeform', function(){
 
   describe('constructor', function(){
 
-    it('should have pools to work with', function(){
+    it('should have a serializer', function(){
 
-      return tf.should.have.property('_pools');
+      return tf.should.have.property('_serializer');
 
     });
 
@@ -52,11 +52,10 @@ describe('Typeform', function(){
 
         STYLE,
 
-        function(err, canvas, release, u, v){
+        function(err, canvas, u, v){
           if(err) throw err;
           console.log('u:', u, ' v:', v);
           document.body.appendChild(canvas);
-          release();
           done();
         }
 
@@ -86,11 +85,10 @@ describe('Typeform', function(){
 
         STYLE,
 
-        function(err, canvas, release, u, v){
+        function(err, canvas, u, v){
           if(err) throw err;
           console.log('u:', u, ' v:', v);
           document.body.appendChild(canvas);
-          release();
           done();
         }
 
