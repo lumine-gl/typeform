@@ -21,7 +21,7 @@ describe('Typeform', function(){
 
   before( function(done){
 
-    tf = new Typeform({ resources: 4, log: true });
+    tf = new Typeform({ concurrency: 4, log: true });
     tf.start(done);
 
   });
