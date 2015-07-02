@@ -1,19 +1,22 @@
-var CONTENT = '<h1>Test pattern</h1>' +
+var CONTENT =
+
+      '<h1>Test pattern</h1>' +
       '<p>If this is in Segoe UI, Helvetica Neue, or Helvetica, and it\'s bluish, and "Test pattern" is heavier than this paragraph, then all is&nbsp;good.</p>',
-    STYLE = {
-      'h1, p': {
-        'fontFamily': '"Segoe UI", "Helvetica Neue", Helvetica, sans-serif',
-        'color': '#86ABA5'
-      },
-      'p': {
-        'fontSize': '13px',
-        'fontWeight': 200
-      },
-      'h1': {
-        'fontSize': '20px',
-        'fontWeight': 600
-      }
-    };
+
+    STYLE =
+
+      "h1, p {" +
+      "  font-family: \"Segoe UI\", \"Helvetica Neue\", Helvetica, sans-serif;" +
+      "  color: #86ABA5;" +
+      "}" +
+      "p {" +
+      "  font-size: 13px;" +
+      "  font-weight: 200;" +
+      "}" +
+      "h1 {" +
+      "  font-size: 20px;" +
+      "  font-weight: 600;" +
+      "}";
 
 describe('Typeform', function(){
 
@@ -49,39 +52,6 @@ describe('Typeform', function(){
           height: 240,
           density: 2
         },
-
-        STYLE,
-
-        function(err, canvas, u, v){
-          if(err) throw err;
-          console.log('u:', u, ' v:', v);
-          document.body.appendChild(canvas);
-          done();
-        }
-
-      );
-
-    });
-
-  });
-
-  describe('renderBoxes', function(){
-
-    it('should look right', function(done){
-
-      tf.renderBoxes(
-        [
-          {
-            x: 20, y: 20, w: 200, h: 200,
-            content: CONTENT
-          },
-          {
-            x: 240, y: 20, w: 200, h: 200,
-            content: CONTENT
-          }
-        ],
-
-        2,
 
         STYLE,
 
